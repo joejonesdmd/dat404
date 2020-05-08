@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: 0;
+}
+
+body{
+    font-family: 'Baloo Bhaina 2', Arial, Helvetica, sans-serif;
+}
+
+main{
+    font-family: 'Baloo Bhaina 2', Arial, Helvetica, sans-serif;
+}
+
+header{
+    padding: 5px 10px;
+    background-color: #003366;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    grid-template-areas: "left right";
+}
+
+.brand-logo{
+    grid-area: left;
+}
+
+.main-nav{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-area: right;
+}
+
+.burgerIcon{
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 10px,15px;
+    background-color: transparent;
+    display: none;
+}
+.navigation-list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.burgerIcon:hover{
+    background-color: tomato;
+    cursor: pointer;
+}
+
+.navigation-item{
+    margin: 0 10px;
+    
+}
+
+.navigation-item a{
+    text-decoration: none;
+    color: white;
+    
+    
+}
+
+.navigation-item a:hover{
+    color: black;
+
+    
+}
+
+.bannerImage{
+    width: 100%;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.welcomeGrid{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas: "welcomeLeft welcomeRight"
+                         "welcomeBottom welcomeBottom";
+    grid-template-rows: (2, 1fr);
+    font-family: 'Baloo Bhaina 2', Arial, Helvetica, sans-serif;
+}
+
+.welcomeLeft{
+    grid-area: welcomeLeft;
+    color: red;
+}
+
+.welcomeRight{
+    grid-area: welcomeRight;
+    color: blue;
+}
+
+.welcomeBottom{
+    grid-area: welcomeBottom;
+    color: orange;
+}
+
+.padding20{
+    padding: 20px;
+}
+
+footer{
+    background-color: pink;
+}
+
+.socialMedia{
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+.socialMedia > a {
+    text-decoration: none;
+    color: black;
+    transition: 2s;
+}
+
+.socialMedia > a:hover {
+    text-decoration: none;
+    color: grey;
+    transition: 0.1s;
+}
+
+.burgerIconContainer{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+@media only screen and (max-width: 480px){
+    .welcomeGrid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "welcomeLeft"
+                             "welcomeRight"
+                             "welcomeBottom";
+        width: 95%;
+        
+    }
+
+    header{
+        padding: 5px 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "left right"
+                              "nav nav";
+    }
+
+    .main-nav{
+        grid-area: nav;
+    }
+    .navigation-list{
+        /* display: none; */
+        display: inline-block;
+        width: 100%;
+        height: 150px;
+        opacity: 1;
+        transition: 1s height ease-in-out, 1s opacity ease-in ;
+        transition-delay: 0s, 0.9s ;
+    }
+
+    .navigation-list-closed{
+        opacity: 0;
+        height: 0;
+        transition: 1s opacity, 1s height;
+        transition-delay: 0s, 0.9s ;
+    }
+
+    .navigation-item{
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        margin: 0;
+        border-bottom: 2px solid #fff;
+    }
+
+    .navigation-item:hover{
+        background-color: #777;
+    }
+
+
+    .burgerIcon{
+        display: block;
+        grid-area: right;
+    }
+
+}
+
+@media only screen and (max-width: 880px){
+    .welcomeGrid{
+    grid-template-areas:    "welcomeBottom welcomeBottom"
+                            "welcomeLeft welcomeRight";
+    }
+}
